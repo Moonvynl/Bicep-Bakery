@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block body %}
+{% load static %}
+<link rel="stylesheet" href="{% static '/css/general.css' %}">
+
+
+<div class="top-menu">
+    <div class="logo">Bicep Bakery</div>
+    <div class="search-container">
+        <form action="#" method="GET">
+            <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <input type="text" placeholder="Search..." name="query">
+        </form>
+    </div>
+    <div class="user-profile">
+        {% if request.user.is_authenticated %}
+            <p class="username-user">{{request.user.username}}</p>
+            <a href=""><i class="fa-solid fa-basket-shopping"></i></a>
+            <i class="fa-solid fa-user dropbtn" onclick="dropdownUser()"></i>
+        {% else %}
+            <i class="fa-solid fa-right-to-bracket dropbtn" onclick="dropdownUser()"></i>
+        {% endif %}
+    </div>
+</div>
+<div class="user-dropdown" id="userDropdown">
+    <ul>
+        {% if request.user.is_authenticated %}
+        <li><a href="">My profile</a></li>
+        <li><a href="">My orders</a></li>
+        <li><form method="post" action="{% url 'auth_system:logout' %}">
+            {% csrf_token %}
+            <button type="submit" class="logout-menu-btn">Вийти</button>
+        </form></li>
+        {% else %}
+            <li><a href="{% url 'auth_system:register' %}">Register</a></li>
+            <li><a href="{% url 'auth_system:login' %}">Login</a></li>
+        {% endif %}
+    </ul>
+</div>
+
+{% block content %}
+<div class="content">
+    {% for product in products %}
+    <div class="product-card">
+        <div class="product-image">
+            <img src="{{product.image.url}}" alt="Product Image">
+            <!-- <div class="product-label">Vegan</div> -->
+            <div class="add-to-cart">
+                <i class="fa-solid fa-cart-shopping"></i>
+            </div>
+        </div>
+        <div class="product-info">
+            <h3 class="product-title">{{product.name}}</h3>
+            <div class="product-rating">
+                <span>&#9733;&#9733;&#9733;&#9733;&#9734;</span> 86% (48)
+            </div>
+            <p class="product-price">{{product.price}} грн</p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
+
+<script src="{% static 'js/general.js' %}"></script>
+{% endblock %}

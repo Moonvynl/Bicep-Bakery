@@ -1,0 +1,136 @@
+body {
+    font-family: "Montserrat", sans-serif;
+    background-color: #323030;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    color: #CDBEA7;
+    margin-top: 30px;
+    font-weight: bold;
+}
+
+.login-container {
+    background-color: #CDBEA7;
+    width: 420px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h2 {
+    color: #323030;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-size: 16px;
+    color: #323030;
+}
+
+.input-group input {
+    width: 95%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #CCCCCC;
+    border-radius: 5px;
+    background-color: #5c5959;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #ffffff;
+}
+
+.error {
+    color: #e92e1d;
+    font-size: 12px;
+}
+
+.login-button {
+    font-family: "Montserrat", sans-serif;;
+    background-color: #000000; 
+    color: #FFFFFF;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.login-button:hover {
+    background-color: #2c2c2c;
+}
+
+.separator {
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.separator span {
+    background-color: #CDBEA7;
+    padding: 0 10px;
+    color: #888888;
+}
+
+.google-button {
+    background-color: #FFFFFF;
+    border: 2px solid #4285F4;
+    color: #4285F4;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+
+.google-button svg {
+    margin-right: 10px;
+}
+
+.signup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.signup-container span {
+    color: #888888;
+    margin-right: 5px;
+}
+
+.signup-button {
+    color: #323030; 
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.signup-button:hover {
+    text-decoration: underline;
+}
