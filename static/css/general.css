@@ -12,8 +12,8 @@ body {
 }
 
 .content {
-    background-color: rgba(255, 255, 255, 0.596);
-    width: 55%;
+    background-color: var(--dark-blue);
+    width: 65%;
     height: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -21,7 +21,8 @@ body {
     justify-content: space-between;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    padding: 20px;
+    padding-right: 30px;
 }
 
 @media (max-width: 768px) {
@@ -281,6 +282,57 @@ body {
     color: #777;
 }
 
+.goals-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.goals-container a {
+    color: inherit; 
+    text-decoration: inherit; 
+}
+
+.goals-container a:hover {
+    background-color: rgba(0, 0, 0, 0.151);
+    border-radius: 8px;
+}
+
+.goals-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.goals-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.goal-item {
+    display: flex;
+    align-items: center;
+    width: 300px;
+    background-color: rgba(0, 0, 0, 0.288);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+}
+
+.goal-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 10px;
+}
+
+.goal-item p {
+    font-size: 18px;
+    color: #333;
+    margin: 0;
+    text-align: left;
+}
 
 @media (max-width: 768px) {
     .search-container {
@@ -307,4 +359,9 @@ body {
     .info-item i {
         font-size: 20px;
     }
+    
+    .goals-container h2 {
+        font-size: 14px;
+    }
+
 }
