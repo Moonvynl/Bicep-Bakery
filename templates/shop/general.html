@@ -7,11 +7,12 @@
 
 <div class="top-menu">
     <div class="logo">Bicep Bakery</div>
-    <div class="search-container">
-        <form action="#" method="GET">
-            <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-            <input type="text" placeholder="Search..." name="query">
-        </form>
+    <div class="menu-punkts">
+        <ul>
+            <li><a href="" class="active">Home</a></li>
+            <li><a href="">Shop</a></li>
+            <li><a href="">About</a></li>
+        </ul>
     </div>
     <div class="user-profile">
         {% if request.user.is_authenticated %}
@@ -39,25 +40,53 @@
     </ul>
 </div>
 
+<div class="main-backgr">
+    <img src="{% static 'img/mainpgbg.png' %}" alt="">
+</div>
+
 {% block content %}
-<div class="content">
-    {% for product in products %}
-    <div class="product-card">
-        <div class="product-image">
-            <img src="{{product.image.url}}" alt="Product Image">
-            <!-- <div class="product-label">Vegan</div> -->
-            <div class="add-to-cart">
-                <i class="fa-solid fa-cart-shopping"></i>
-            </div>
-        </div>
-        <div class="product-info">
-            <h3 class="product-title">{{product.name}}</h3>
-            <div class="product-rating">
-                <span>&#9733;&#9733;&#9733;&#9733;&#9734;</span> 86% (48)
-            </div>
-            <p class="product-price">{{product.price}} грн</p>
+<div class="info-wrapper">
+    <div class="info-item">
+        <i class="fas fa-heart"></i>
+        <div class="info-text">
+            <h4>6мл+</h4>
+            <p>задоволених замовників</p>
         </div>
     </div>
+
+    <div class="info-item">
+        <i class="fas fa-hourglass-half"></i>
+        <div class="info-text">
+            <h4>До 4 днів</h4>
+            <p>швидка доставка</p>
+        </div>
+    </div>
+
+    <div class="info-item">
+        <i class="fas fa-box"></i>
+        <div class="info-text">
+            <h4>Безкоштовна доставка</h4>
+            <p>для замовлень на суму від 2250 грн</p>
+        </div>
+    </div>
+
+    <div class="info-item">
+        <i class="fas fa-shopping-bag"></i>
+        <div class="info-text">
+            <h4>5000+ продуктів</h4>
+            <p>широкий асортимент</p>
+        </div>
+    </div>
+</div>
+    <!-- <div class="search-container">
+        <form action="#" method="GET">
+            <input type="text" id="btn-search" class="material-icons" value="Search..." />
+            <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+    </div> -->
+<div class="content">
+    {% for product in products %}
+        {% include 'shop/product-card.html' %}
     {% endfor %}
 </div>
 {% endblock %}

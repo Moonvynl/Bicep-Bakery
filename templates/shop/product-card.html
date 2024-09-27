@@ -1,0 +1,23 @@
+{% load static %}
+<link rel="stylesheet" href="{% static '/css/product-card.css' %}">
+
+<div class="product-card">
+    <div class="product-image">
+        <img src="{{product.image.url}}" alt="Product Image">
+        {% if product.in_stock %}
+            <div class="product-label">In stock</div>
+        {% else %}
+            <div class="product-label out-of-stock">Out of stock</div>
+        {% endif %}
+        <div class="add-to-cart">
+            <i class="fa-solid fa-cart-shopping"></i>
+        </div>
+    </div>
+    <div class="product-info">
+        <h3 class="product-title">{{product.name}}</h3>
+        <div class="product-rating">
+            <span>&#9733;&#9733;&#9733;&#9733;&#9734;</span> 86% (48)
+        </div>
+        <p class="product-price">{{product.price}} грн</p>
+    </div>
+</div>
